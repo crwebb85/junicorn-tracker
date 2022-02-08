@@ -1,0 +1,23 @@
+{
+  "name": "junicorn-tracker",
+  "version": "0.1.0",
+  "bin": {
+    "junicorn-tracker": "bin/junicorn-tracker.js"
+  },
+  "scripts": {
+    "build": "tsc  && cdk synth",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk"
+  },
+  "devDependencies": {
+    "@types/node": "10.17.27",
+    "aws-cdk": "2.3.0",
+    "ts-node": "^9.0.0",
+    "typescript": "~3.9.7"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "2.3.0",
+    "constructs": "^10.0.0"
+  }
+}
