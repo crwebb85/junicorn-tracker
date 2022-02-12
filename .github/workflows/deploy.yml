@@ -30,7 +30,7 @@ jobs:
       - run: yarn install
 
       - name: Synth infrastructure stack
-        run: yarn --cwd packages/infrastructure cdk synth
+        run: yarn workspace infrastructure cdk synth
 
       - name: Deploy infrastructure stack
-        run: yarn --cwd packages/infrastructure cdk deploy --require-approval never
+        run: yarn workspace infrastructure cdk deploy --require-approval never
