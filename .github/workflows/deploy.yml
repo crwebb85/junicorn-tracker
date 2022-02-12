@@ -5,7 +5,6 @@ on:
       - main
 env:
   AWS_REGION: 'us-east-2'
-  ROLE_ARN: 'arn:aws:iam::871128211389:role/github-ci-role'
 
 permissions:
   id-token: write
@@ -21,7 +20,7 @@ jobs:
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@master
         with:
-          role-to-assume: ${{ env.ROLE_ARN }}
+          role-to-assume: arn:aws:iam::871128211389:role/github-ci-role
           aws-region: ${{ env.AWS_REGION }}
 
       - uses: actions/setup-node@v2
