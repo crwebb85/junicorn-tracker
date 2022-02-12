@@ -50,7 +50,7 @@ export class BootstrapStack extends Stack {
           statements: [
             new PolicyStatement({
               effect: Effect.ALLOW,
-              actions: ['sts:AssumeRoleWithWebIdentity'],
+              actions: ['sts:AssumeRole'],
               resources: [`arn:aws:iam::${this.account}:role/cdk-*`],
             }),
           ],
