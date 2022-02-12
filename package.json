@@ -4,12 +4,12 @@
     "packages/*"
   ],
   "scripts": {
-    "build:infastructure": "yarn workspace infastructure build",
+    "build:infrastructure": "yarn workspace infrastructure build",
     "build:bootstrap": "yarn workspace bootstrap build",
-    "build": "concurrently --kill-others-on-fail \"yarn build:infastructure\"  \"yarn build:bootstrap\" ",
-    "watch:infastructure": "yarn workspace infastructure watch",
+    "build": "concurrently --kill-others-on-fail \"yarn build:infrastructure\"  \"yarn build:bootstrap\" ",
+    "watch:infrastructure": "yarn workspace infrastructure watch",
     "watch:bootstrap": "yarn workspace bootstrap watch",
-    "watch": "concurrently --kill-others-on-fail \"yarn watch:infastructure\"  \"yarn watch:bootstrap\" ",
+    "watch": "concurrently --kill-others-on-fail \"yarn watch:infrastructure\"  \"yarn watch:bootstrap\" ",
     "lint": "eslint . --ignore-path .gitignore --ext .ts",
     "format": "prettier --config .prettierrc --ignore-path .gitignore --write ."
   },

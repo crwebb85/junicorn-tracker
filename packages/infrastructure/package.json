@@ -1,5 +1,5 @@
 {
-  "name": "infastructure",
+  "name": "infrastructure",
   "version": "1.0.0",
   "bin": {
     "junicorn-tracker": "bin/junicorn-tracker.js"
