@@ -1,5 +1,8 @@
 name: Deploy Infrastructure
-on: pull_request
+on:
+  push:
+    branches:
+      - main
 env:
   AWS_REGION: 'us-east-2'
   ROLE_ARN: 'arn:aws:iam::871128211389:role/github-ci-role'
