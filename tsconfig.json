@@ -21,10 +21,10 @@
   },
   "references": [
     {
-      "path": "./bootstrap"
+      "path": "./packages/bootstrap"
     },
     {
-      "path": "./infrastructure"
+      "path": "./packages/infrastructure"
     }
   ],
   "files": [],

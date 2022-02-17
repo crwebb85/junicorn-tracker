@@ -34,3 +34,10 @@ jobs:
 
       - name: Deploy infrastructure stack
         run: yarn workspace infrastructure cdk deploy --require-approval never
+        env:
+          WEBDAV_DOMAIN_NAME: ${{ secrets.WEBDAV_DOMAIN_NAME }}
+          WEBDAV_USERNAME: ${{ secrets.WEBDAV_USERNAME }}
+          WEBDAV_PASSWORD: ${{ secrets.WEBDAV_PASSWORD }}
+          WEBDAV_UPLOAD_PATH: ${{ secrets.WEBDAV_UPLOAD_PATH }}
+          INSTAGRAM_USERNAME: ${{ secrets.INSTAGRAM_USERNAME }}
+          INSTAGRAM_PASSWORD: ${{ secrets.INSTAGRAM_PASSWORD }}
