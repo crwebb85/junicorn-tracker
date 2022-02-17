@@ -47,4 +47,5 @@ jobs:
           export WEBDAV_UPLOAD_PATH="${{ env.WEBDAV_UPLOAD_PATH }}"
           export INSTAGRAM_USERNAME="${{ env.INSTAGRAM_USERNAME }}"
           export INSTAGRAM_PASSWORD="${{ env.INSTAGRAM_PASSWORD }}"
+          export SANITY_TEST="Sanity Test"
           yarn workspace infrastructure cdk deploy --require-approval never

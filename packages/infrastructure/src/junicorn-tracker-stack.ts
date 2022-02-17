@@ -14,6 +14,7 @@ interface JunicornTrackerLambdaConfig {
   webdavUploadPath: string;
   instagramUsername: string;
   instagramPassword: string;
+  sanityTest: string;
 }
 export class JunicornTrackerStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
@@ -26,6 +27,7 @@ export class JunicornTrackerStack extends Stack {
       webdavUploadPath: process.env['WEBDAV_UPLOAD_PATH'] ?? '',
       instagramUsername: process.env['INSTAGRAM_USERNAME'] ?? '',
       instagramPassword: process.env['INSTAGRAM_PASSWORD'] ?? '',
+      sanityTest: process.env['SANITY_TEST'] ?? '',
     };
 
     const junicornTrackerLambda = new Function(this, 'InstagramTrackerLambda', {
