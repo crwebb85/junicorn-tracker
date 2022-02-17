@@ -32,12 +32,15 @@ jobs:
       - name: Synth infrastructure stack
         run: yarn workspace infrastructure cdk synth
 
+      - name: Set environment 
+        run: |
+          echo ${{ secrets.WEBDAV_DOMAIN_NAME }} >> $WEBDAV_DOMAIN_NAME
+          echo ${{ secrets.WEBDAV_USERNAME }} >> $WEBDAV_USERNAME
+          echo ${{ secrets.WEBDAV_PASSWORD }} >> $WEBDAV_PASSWORD
+          echo ${{ secrets.WEBDAV_UPLOAD_PATH }} >> $WEBDAV_UPLOAD_PATH
+          echo ${{ secrets.INSTAGRAM_USERNAME }} >> $INSTAGRAM_USERNAME
+          echo ${{ secrets.INSTAGRAM_PASSWORD }} >> $INSTAGRAM_PASSWORD
+
       - name: Deploy infrastructure stack
         run: yarn workspace infrastructure cdk deploy --require-approval never
-        env:
-          WEBDAV_DOMAIN_NAME: ${{ secrets.WEBDAV_DOMAIN_NAME }}
-          WEBDAV_USERNAME: ${{ secrets.WEBDAV_USERNAME }}
-          WEBDAV_PASSWORD: ${{ secrets.WEBDAV_PASSWORD }}
-          WEBDAV_UPLOAD_PATH: ${{ secrets.WEBDAV_UPLOAD_PATH }}
-          INSTAGRAM_USERNAME: ${{ secrets.INSTAGRAM_USERNAME }}
-          INSTAGRAM_PASSWORD: ${{ secrets.INSTAGRAM_PASSWORD }}
+          
