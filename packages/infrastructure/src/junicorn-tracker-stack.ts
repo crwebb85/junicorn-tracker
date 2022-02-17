@@ -1,3 +1,4 @@
+import * as dotenv from 'dotenv';
 import * as path from 'path';
 
 import { Architecture, Code, Function, Runtime } from 'aws-cdk-lib/aws-lambda';
@@ -14,11 +15,12 @@ interface JunicornTrackerLambdaConfig {
   webdavUploadPath: string;
   instagramUsername: string;
   instagramPassword: string;
-  sanityTest: string;
 }
 export class JunicornTrackerStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
+
+    dotenv.config();
 
     const env: JunicornTrackerLambdaConfig = {
       webdavDomainName: process.env['WEBDAV_DOMAIN_NAME'] ?? '',
@@ -27,7 +29,6 @@ export class JunicornTrackerStack extends Stack {
       webdavUploadPath: process.env['WEBDAV_UPLOAD_PATH'] ?? '',
       instagramUsername: process.env['INSTAGRAM_USERNAME'] ?? '',
       instagramPassword: process.env['INSTAGRAM_PASSWORD'] ?? '',
-      sanityTest: process.env['SANITY_TEST'] ?? '',
     };
 
     const junicornTrackerLambda = new Function(this, 'InstagramTrackerLambda', {

@@ -12,7 +12,8 @@
   "dependencies": {
     "aws-cdk-lib": "^2.12.0",
     "constructs": "^10.0.58",
-    "cross-env": "7.0.3"
+    "cross-env": "7.0.3",
+    "dotenv": "^16.0.0"
   },
   "devDependencies": {
     "@types/node": "^17.0.17",
