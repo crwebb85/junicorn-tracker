@@ -40,12 +40,4 @@ jobs:
           WEBDAV_UPLOAD_PATH: ${{ secrets.WEBDAV_UPLOAD_PATH }}
           INSTAGRAM_USERNAME: ${{ secrets.INSTAGRAM_USERNAME }}
           INSTAGRAM_PASSWORD: ${{ secrets.INSTAGRAM_PASSWORD }}
-        run: |
-          export WEBDAV_DOMAIN_NAME="$WEBDAV_DOMAIN_NAME"
-          export WEBDAV_USERNAME="$WEBDAV_USERNAME"
-          export WEBDAV_PASSWORD="$WEBDAV_PASSWORD"
-          export WEBDAV_UPLOAD_PATH="$WEBDAV_UPLOAD_PATH"
-          export INSTAGRAM_USERNAME="$INSTAGRAM_USERNAME"
-          export INSTAGRAM_PASSWORD="$INSTAGRAM_PASSWORD"
-          export SANITY_TEST="Sanity Test"
-          yarn workspace infrastructure cdk deploy --require-approval never
+        run: yarn workspace infrastructure cdk deploy --require-approval never
