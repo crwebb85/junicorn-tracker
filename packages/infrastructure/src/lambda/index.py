@@ -9,4 +9,3 @@ def handler(event, context):
     print(os.environ.get('webdavUploadPath'))
     print(os.environ.get('instagramUsername'))
     print(os.environ.get('instagramPassword'))
-    print(os.environ.get('sanityTest'))
