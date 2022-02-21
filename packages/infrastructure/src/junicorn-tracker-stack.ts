@@ -7,6 +7,7 @@ import { Rule, Schedule } from 'aws-cdk-lib/aws-events';
 
 import { Construct } from 'constructs';
 import { LambdaFunction } from 'aws-cdk-lib/aws-events-targets';
+import { PythonFunction } from '@aws-cdk/aws-lambda-python-alpha'
 
 interface JunicornTrackerLambdaConfig {
   webdavDomainName: string;
@@ -31,15 +32,17 @@ export class JunicornTrackerStack extends Stack {
       instagramPassword: process.env['INSTAGRAM_PASSWORD'] ?? '',
     };
 
-    const junicornTrackerLambda = new Function(this, 'InstagramTrackerLambda', {
-      code: Code.fromAsset(path.join(__dirname, 'lambda')),
-      handler: 'index.handler',
+
+    const junicornTrackerLambda = new PythonFunction(this, 'InstagramTreackerLambda', {
+      entry: path.join(__dirname, 'lambda'),
       runtime: Runtime.PYTHON_3_9,
+      index: 'index.py',
+      handler: 'handler',
       architecture: Architecture.ARM_64,
       environment: {
         region: Stack.of(this).region,
         availabilityZones: JSON.stringify(Stack.of(this).availabilityZones),
-        ...env,
+        ...env,  
       },
     });
 

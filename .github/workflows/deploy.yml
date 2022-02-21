@@ -29,6 +29,10 @@ jobs:
 
       - run: yarn install
 
+      - name: Docker Experimental Status
+        run: |
+          docker version -f '{{.Server.Experimental}}'
+
       - name: Synth infrastructure stack
         run: yarn workspace infrastructure cdk synth
 
