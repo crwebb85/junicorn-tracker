@@ -37,7 +37,7 @@ jobs:
         run: yarn workspace infrastructure cdk synth
 
       - name: Deploy infrastructure stack
-        env: 
+        env:
           WEBDAV_DOMAIN_NAME: ${{ secrets.WEBDAV_DOMAIN_NAME }}
           WEBDAV_USERNAME: ${{ secrets.WEBDAV_USERNAME }}
           WEBDAV_PASSWORD: ${{ secrets.WEBDAV_PASSWORD }}
