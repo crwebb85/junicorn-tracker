@@ -44,4 +44,5 @@ jobs:
           WEBDAV_UPLOAD_PATH: ${{ secrets.WEBDAV_UPLOAD_PATH }}
           INSTAGRAM_USERNAME: ${{ secrets.INSTAGRAM_USERNAME }}
           INSTAGRAM_PASSWORD: ${{ secrets.INSTAGRAM_PASSWORD }}
+          DOWNLOAD_LIMIT: ${{ secrets.DOWNLOAD_LIMIT }}
         run: yarn workspace infrastructure cdk deploy --require-approval never
